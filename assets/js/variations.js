@@ -60,93 +60,6 @@ registerBlockVariation( 'core/quote', {
 } );
 
 /**
- * Determines if the active variation is the one we want.
- *
- * @param {*} props
- * @return {boolean} Is this the correct variation?
- */
-// const isQuoteBeatlesVariation2 = ( props ) => {
-// 	const {
-// 		attributes: { namespace },
-// 	} = props;
-// 	return namespace && namespace === 'dh-quote-beatles-2';
-// };
-
-// const isQuoteBeatlesVariation = ( props ) => {
-// 	const {
-// 		attributes: { namespace },
-// 	} = props;
-// 	return namespace && namespace === 'dh-quote-beatles';
-// };
-
-// addFilter(
-// 	'blockEditor.useBlockProps',
-// 	'example/useBlockProps',
-// 	( props, blockType, blockAttributes, clientId ) => {
-// 		debugger;
-// 		if ( isQuoteBeatlesVariation( props ) ) {
-// 		}
-// 		return props;
-// 	}
-// );
-
-// /**
-//  * Filter the BlockEdit object and add random quote by default.
-//  *
-//  * @param {Object} BlockEdit
-//  */
-// function addRandomQuote( BlockEdit ) {
-// 	return ( props ) => {
-// 		if ( isQuoteBeatlesVariation( props ) ) {
-// 			console.log( '--- dh-quote-beatles variation ---' );
-// 			console.log( props );
-// 			return <BlockEdit { ...props } />;
-// 		}
-
-// 		if ( ! isQuoteBeatlesVariation2( props ) ) {
-// 			return <BlockEdit { ...props } />;
-// 		}
-
-// 		console.log( '--- dh-quote-beatles-2 variation ---' );
-
-// 		const { quote, author } =
-// 			beatlesQuotes.quotes[
-// 				Math.floor( Math.random() * beatlesQuotes.quotes.length )
-// 			];
-
-// 		props.setAttributes( { value: quote, citation: author } );
-// 		// const newProps = {
-// 		// 	...props,
-// 		// 	attributes: {
-// 		// 		...props.attributes,
-// 		// 		citation: author,
-// 		// 	},
-// 		// 	innerBlocks: [
-// 		// 		{
-// 		// 			name: 'core/paragraph',
-// 		// 			attributes: {
-// 		// 				content: quote,
-// 		// 			},
-// 		// 		},
-// 		// 	],
-// 		// };
-// 		// console.log( props );
-// 		// console.log( newProps );
-// 		return (
-// 			<>
-// 				<BlockEdit { ...props } />
-// 			</>
-// 		);
-// 	};
-// }
-
-// addFilter(
-// 	'editor.BlockEdit',
-// 	'dh-alternatives-custom-blocks/add-random-quote',
-// 	addRandomQuote
-// );
-
-/**
  * Add the attributes needed for button icons.
  *
  * @since 0.1.0
@@ -157,42 +70,19 @@ function addAttributes( settings ) {
 		return settings;
 	}
 
-	// Add the block visibility attributes.
+	// Add "namespace" new attribute to the block.
 	const quoteExtraAttributes = {
 		namespace: {
 			type: 'string',
 		},
 	};
 
-	const { quote, author } =
-		beatlesQuotes.quotes[
-			Math.floor( Math.random() * beatlesQuotes.quotes.length )
-		];
-
 	const newSettings = {
 		...settings,
 		attributes: {
 			...settings.attributes,
 			...quoteExtraAttributes,
-		},
-		variations: [
-			{
-				name: 'quote-beatles-2',
-				title: 'Quote Beatles-2',
-				attributes: {
-					namespace: 'dh-quote-beatles-2',
-					citation: author,
-				},
-				innerBlocks: [
-					{
-						name: 'core/paragraph',
-						attributes: {
-							content: quote,
-						},
-					},
-				],
-			},
-		],
+		}
 	};
 
 	return newSettings;
