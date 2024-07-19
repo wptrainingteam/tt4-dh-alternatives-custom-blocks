@@ -13,7 +13,7 @@
  * @since 1.0.0
  * @link  https://developer.wordpress.org/reference/functions/register_block_style/
  */
-function bse__register_block_styles()
+function dh__register_block_styles()
 {
 	register_block_style(
 		'core/quote',

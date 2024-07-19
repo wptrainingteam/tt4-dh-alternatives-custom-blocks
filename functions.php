@@ -16,20 +16,32 @@
 define('THEME_STYLE_URL', get_stylesheet_uri());
 define('THEME_DIR', __DIR__);
 
-require_once THEME_DIR . '/includes/register-block-style.php';
-require_once THEME_DIR . '/includes/filter-block-metadata.php';
-require_once THEME_DIR . '/includes/register-plugins.php';
-require_once THEME_DIR . '/includes/prevent-plugin-deactivation.php';
-require_once THEME_DIR . '/includes/tgmpa/class-tgm-plugin-activation.php';
-require_once THEME_DIR . '/includes/enqueue-assets.php';
+
+$rootFiles = glob(THEME_DIR . '/includes/*.php');
+$subdirectoryFiles = glob(THEME_DIR . '/includes/**/*.php');
+$allFiles = array_merge($rootFiles, $subdirectoryFiles);
+
+foreach ($allFiles as $filename) {
+	include_once($filename);
+}
+
+// require_once THEME_DIR . '/includes/register-block-style.php';
+// require_once THEME_DIR . '/includes/filter-block-metadata.php';
+// require_once THEME_DIR . '/includes/register-plugins.php';
+// require_once THEME_DIR . '/includes/prevent-plugin-deactivation.php';
+// require_once THEME_DIR . '/includes/tgmpa/class-tgm-plugin-activation.php';
+// require_once THEME_DIR . '/includes/enqueue-assets.php';
 
 // setup
-add_action('tgmpa_register', 'bse__register_plugins');
+add_action('tgmpa_register', 'dh__register_plugins');
 // add_filter('plugin_action_links', 'prevent_plugin_deactivation', 10, 4);
-add_action('enqueue_block_editor_assets', 'bse__enqueue_block_variations_script');
+add_action('enqueue_block_editor_assets', 'dh__enqueue_block_variations_script');
 
 // hand-drawn-red - Register Block Style via PHP.
-add_action("init", 'bse__register_block_styles');
+add_action("init", 'dh__register_block_styles');
 
 // hand-drawn-purple - Filter core/quote block metadata to add a new style variation.
 add_filter('block_type_metadata', 'filter_block_metadata');
+
+add_action('init', 'dh__register_meta');
+add_action('init', 'dh__register_block_bindings');

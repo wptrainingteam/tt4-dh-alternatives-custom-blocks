@@ -1,39 +1,58 @@
 import { registerBlockVariation } from '@wordpress/blocks';
+import { quotes } from '../json/beatles-quotes.json';
 
-console.log( 'Var___iations.js loaded' );
-
-// registerBlockVariation( 'core/paragraph', {
-// 	name: 'custom-paragraph',
-// 	title: 'Custom Paragraph',
-// 	scope: [ 'block', 'inserter', 'transform' ],
-// 	keywords: [ 'paragraph' ],
-// 	attributes: {
-// 		namespace: 'custom',
-// 	},
-// 	isActive: [ 'namespace' ],
-// } );
-
-// const paragraphBlock = getBlockType( 'core/paragraph' );
-// console.log( paragraphBlock );
-
-// registerBlockType( 'custom/paragraph', {
-// 	title: __( 'My First Block' ),
-// 	edit: () => <div>{ __( 'Hello from the editor!' ) }</div>,
-// 	save: () => <div>Hello from the saved content!</div>,
-// } );
-
-wp.blocks.registerBlockVariation( 'core/quote', {
-	name: 'custom-quote',
-	title: 'Custom Quote',
+registerBlockVariation( 'core/quote', {
+	name: 'quote-beatles',
+	title: 'Quote Beatles',
 	scope: [ 'block', 'inserter', 'transform' ],
 	keywords: [ 'quote' ],
 	innerBlocks: [
-		{
-			blockName: 'core/paragraph',
-		},
+		[
+			'core/paragraph',
+			{
+				metadata: {
+					bindings: {
+						content: {
+							source: 'core/post-meta',
+							args: {
+								key: 'quote-content',
+							},
+						},
+					},
+				},
+				content:
+					quotes[ Math.floor( Math.random() * quotes.length ) ].quote,
+			},
+		],
 	],
 	attributes: {
-		namespace: 'custom',
+		namespace: 'dh-quote-beatles',
+		citation: 'The Beatles',
+	},
+	isActive: [ 'namespace' ],
+} );
+
+registerBlockVariation( 'core/quote', {
+	name: 'quote-random',
+	title: 'Quote Random',
+	scope: [ 'block', 'inserter', 'transform' ],
+	keywords: [ 'quote' ],
+	innerBlocks: [
+		[
+			'core/paragraph',
+			{
+				metadata: {
+					bindings: {
+						content: {
+							source: 'dh/random-quote',
+						},
+					},
+				},
+			},
+		],
+	],
+	attributes: {
+		namespace: 'dh-quote-random',
 	},
 	isActive: [ 'namespace' ],
 } );

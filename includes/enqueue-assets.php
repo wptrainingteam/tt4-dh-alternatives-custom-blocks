@@ -13,7 +13,7 @@
  *
  * @link  https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/
  */
-function bse__enqueue_block_variations_script()
+function dh__enqueue_block_variations_script()
 {
 	$script_asset = include THEME_DIR . '/build/js/variations.asset.php';
 
@@ -27,7 +27,7 @@ function bse__enqueue_block_variations_script()
 }
 
 
-// function bse__enqueue_quote_block_styles()
+// function dh__enqueue_quote_block_styles()
 // {
 // 	wp_enqueue_block_style(
 // 		'core/quote',

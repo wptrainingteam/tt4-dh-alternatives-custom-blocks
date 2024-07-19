@@ -13,7 +13,7 @@
  *
  * @return void
  */
-function bse__register_plugins()
+function dh__register_plugins()
 {
 	$plugins = [
 		[
