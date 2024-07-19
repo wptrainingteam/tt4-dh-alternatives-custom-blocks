@@ -21,7 +21,7 @@ function dh__register_meta()
 			'show_in_rest'      => true,
 			'single'            => true,
 			'type'              => 'string',
-			'default'      		=> 'Default text field',
+			'default'      		=> 'John, Paul, George, and Ringo',
 			'sanitize_callback' => 'wp_strip_all_tags'
 		)
 	);

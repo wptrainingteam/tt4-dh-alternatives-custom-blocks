@@ -37,10 +37,10 @@ function filter_block_metadata($metadata)
 				);
 		$metadata['supports']["__experimentalBorder"] = $border_support;
 
-		$attr_namespace = array(
-			'type'  => 'string'
-		);
-		$metadata['attributes']["namespace"] = $attr_namespace;
+		// $attr_namespace = array(
+		// 	'type'  => 'string'
+		// );
+		// $metadata['attributes']["namespace"] = $attr_namespace;
 	}
 
 	if ('core/paragraph' === $metadata['name']) {
