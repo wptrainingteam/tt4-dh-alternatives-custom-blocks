@@ -1,7 +1,20 @@
-import { registerBlockVariation, registerBlockStyle } from '@wordpress/blocks';
+import {
+	registerBlockVariation,
+	registerBlockStyle,
+	createBlock,
+} from '@wordpress/blocks';
 import { addFilter } from '@wordpress/hooks';
-import { beatlesQuotes } from './beatles-quotes.js';
+import { useDispatch } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
+import {
+	InspectorControls,
+	useInnerBlocksProps,
+	InnerBlocks,
+	useBlockProps,
+} from '@wordpress/block-editor';
+import { Button, PanelBody, PanelRow } from '@wordpress/components';
+
+import { beatlesQuotes } from './beatles-quotes.js';
 
 // The CSS for this block style is located in the `style.css` file.
 registerBlockStyle( 'core/image', {
@@ -30,6 +43,17 @@ registerBlockVariation( 'core/quote', {
 	attributes: {
 		namespace: 'dh-quote-beatles',
 		citation: author,
+	},
+	isActive: [ 'namespace' ],
+} );
+
+registerBlockVariation( 'core/quote', {
+	name: 'quote-api',
+	title: 'Quote API',
+	scope: [ 'block', 'inserter', 'transform' ],
+	keywords: [ 'quote' ],
+	attributes: {
+		namespace: 'dh-quote-api',
 	},
 	isActive: [ 'namespace' ],
 } );
@@ -82,7 +106,7 @@ function addAttributes( settings ) {
 		attributes: {
 			...settings.attributes,
 			...quoteExtraAttributes,
-		}
+		},
 	};
 
 	return newSettings;
@@ -92,4 +116,78 @@ addFilter(
 	'blocks.registerBlockType',
 	'dh-alternatives-custom-blocks/add-attributes',
 	addAttributes
+);
+
+const isQuoteAPIVariation = ( props ) => {
+	const {
+		attributes: { namespace },
+	} = props;
+	return namespace && namespace === 'dh-quote-api';
+};
+
+/**
+ * Filter the BlockEdit object and add icon inspector controls to button blocks.
+ *
+ * @since 0.1.0
+ * @param {Object} BlockEdit
+ */
+function addInspectorControls( BlockEdit ) {
+	return ( props ) => {
+		if (
+			props.name !== 'core/quote' ||
+			( props.name === 'core/quote' && ! isQuoteAPIVariation( props ) )
+		) {
+			return <BlockEdit { ...props } />;
+		}
+
+		console.log( props );
+		const { setAttributes } = props;
+		// const { replaceInnerBlocks } = useDispatch( 'core/block-editor' );
+
+		const onClickUpdateData = () => {
+			fetch( 'https://api.quotable.io/random' )
+				.then( ( response ) => response.json() )
+				.then( ( data ) => {
+					setAttributes( {
+						citation: data.author,
+					} );
+					// const newInnerParagraphWithQuote = [
+					// 	createBlock( 'core/paragraph', {
+					// 		content: data.quote,
+					// 	} ),
+					// ];
+					// replaceInnerBlocks( clientId, newInnerParagraphWithQuote );
+				} );
+		};
+
+		return (
+			<>
+				<BlockEdit { ...props } />
+				<InspectorControls>
+					<PanelBody
+						title={ __( 'Quote settings', 'enable-button-icons' ) }
+						initialOpen={ true }
+					>
+						<PanelRow>
+							<Button
+								label={ __(
+									'Update data',
+									'enable-button-icons'
+								) }
+								onClick={ onClickUpdateData }
+							>
+								{ __( 'Update data', 'enable-button-icons' ) }
+							</Button>
+						</PanelRow>
+					</PanelBody>
+				</InspectorControls>
+			</>
+		);
+	};
+}
+
+addFilter(
+	'editor.BlockEdit',
+	'enable-button-icons/add-inspector-controls',
+	addInspectorControls
 );
