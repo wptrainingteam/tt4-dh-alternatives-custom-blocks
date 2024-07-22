@@ -14,7 +14,7 @@
  * @param array $metadata Metadata for registering a block type.
  * @return array
  */
-function filter_block_metadata($metadata)
+function dh__filter_block_metadata($metadata)
 {
 	if ('core/quote' === $metadata['name']) {
 		$new_style = array(
