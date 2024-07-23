@@ -16,7 +16,7 @@
 							"width": "2px",
 							"radius": "255px 15px 225px 15px/15px 225px 15px 255px"
 						},
-						"shadow": "3px 3px red, -1em 0 .4em olive"
+						"shadow": "var(--wp--preset--shadow--bizarre)"
 					}
 					
 				}

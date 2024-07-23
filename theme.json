@@ -1,16 +1,37 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 3,
+	"settings": {
+		"shadow": {
+				"defaultPresets": true,
+				"presets": [
+					{
+						"name": "Bizarre",
+						"slug": "bizarre",
+						"shadow": "3px 3px red, -1em 0 .4em var(--wp--preset--color--accent-4)"
+					}
+				]
+		}
+	},
 	"styles": {
 		"blocks": {
 			"core/quote":{
+				"color": {
+					"text": "var(--wp--preset--color--contrast)"
+				},
+				"border": {
+					"color": "var(--wp--preset--color--contrast)",
+					"style": "solid",
+					"width": "2px"
+				},
+				"shadow": "var(--wp--preset--shadow--natural)",
 				"variations": {
 					"__hand-drawn":{
                         "color": {
-                            "text": "red"
+                            "text": "var(--wp--preset--color--accent-3)"
                         },
 						"border": {
-							"color": "red",
+							"color": "var(--wp--preset--color--accent-3)",
 							"style": "solid",
 							"width": "2px",
 							"radius": "255px 15px 225px 15px/15px 225px 15px 255px"
