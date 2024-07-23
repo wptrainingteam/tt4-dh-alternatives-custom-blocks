@@ -949,9 +949,9 @@ function addAttributes(settings) {
       ...extraAttributes
     },
     supports: {
-      ...settings.supports
-      // __experimentalBorder,
-      // shadow: true
+      ...settings.supports,
+      __experimentalBorder,
+      shadow: true
     }
   };
   return newSettings;

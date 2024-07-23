@@ -43,8 +43,8 @@ function addAttributes( settings ) {
 		},
 		supports: {
 			...settings.supports,
-			// __experimentalBorder,
-			// shadow: true
+			__experimentalBorder,
+			shadow: true
 		},
 	};
 
