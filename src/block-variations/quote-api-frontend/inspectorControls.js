@@ -15,18 +15,17 @@ import { tags } from '../../constants/index.js';
  */
 
 export const QuoteAPIFrontendInspectorControls = ( props ) => {
-	const { clientId } = props;
-	const { replaceInnerBlocks } = useDispatch( 'core/block-editor' );
-	const { getBlock } = select( 'core/block-editor' );
+	const {
+		clientId,
+		setAttributes,
+		attributes: { tags: initialTags },
+	} = props;
 
-	const idInnerParagraph = getBlock( clientId ).innerBlocks[ 0 ].clientId;
-	const { tags: initialTags } = getBlock( idInnerParagraph ).attributes;
+	const { replaceInnerBlocks } = useDispatch( 'core/block-editor' );
 
 	const [ selectedTags, setSelectedTags ] = useState(
 		initialTags ? initialTags.split( '|' ) : []
 	);
-
-	const suggestionsTags = tags.map( ( tag ) => tag.name );
 
 	return (
 		<InspectorControls>
@@ -52,7 +51,7 @@ export const QuoteAPIFrontendInspectorControls = ( props ) => {
 											},
 										},
 									},
-									tags: token.join( '|' ),
+									// tags: token.join( '|' ),
 									content:
 										'This content will be replaced in the frontend with a random quote from either of the tags: ' +
 										token.join( ', ' ),
@@ -62,8 +61,11 @@ export const QuoteAPIFrontendInspectorControls = ( props ) => {
 								clientId,
 								newInnerParagraphWithQuote
 							);
+							setAttributes( {
+								tags: token.join( '|' ),
+							} );
 						} }
-						suggestions={ suggestionsTags }
+						suggestions={ tags.map( ( tag ) => tag.name ) }
 						value={ selectedTags }
 					/>
 				</PanelRow>
