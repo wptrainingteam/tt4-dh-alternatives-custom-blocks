@@ -960,8 +960,9 @@ function addAttributes(settings) {
   return newSettings;
 }
 (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.addFilter)('blocks.registerBlockType', 'quote-api/add-attributes', addAttributes);
-(0,_variations_quote_api_editor__WEBPACK_IMPORTED_MODULE_1__.registerQuoteAPIEditorVariation)();
-(0,_variations_quote_api_frontend__WEBPACK_IMPORTED_MODULE_2__.registerQuoteAPIFrontendVariation)();
+
+// registerQuoteAPIEditorVariation();
+// registerQuoteAPIFrontendVariation();
 /******/ })()
 ;
 //# sourceMappingURL=index.js.map

@@ -57,5 +57,5 @@ addFilter(
 	addAttributes
 );
 
-registerQuoteAPIEditorVariation();
-registerQuoteAPIFrontendVariation();
+// registerQuoteAPIEditorVariation();
+// registerQuoteAPIFrontendVariation();
