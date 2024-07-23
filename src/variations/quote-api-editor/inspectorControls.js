@@ -1,7 +1,10 @@
 import { createBlock } from '@wordpress/blocks';
-import { useDispatch } from '@wordpress/data';
+import { dispatch } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
-import { InspectorControls } from '@wordpress/block-editor';
+import {
+	InspectorControls,
+	store as blockEditorStore,
+} from '@wordpress/block-editor';
 import { useState } from '@wordpress/element';
 import {
 	Button,
@@ -25,7 +28,7 @@ const { URL_RANDOM_QUOTE, URL_RANDOM_BY_AUTHOR, AUTHOR_TAG } = API_ENDPOINTS;
 export const QuoteAPIEditorInspectorControls = ( props ) => {
 	const { clientId, setAttributes } = props;
 	const [ selectedAuthor, setSelectedAuthor ] = useState( '' );
-	const { replaceInnerBlocks } = useDispatch( 'core/block-editor' );
+
 	const DEFAULT_OPTION = {
 		value: '',
 		label: __( 'Any Author', 'quote-api' ),
@@ -53,10 +56,13 @@ export const QuoteAPIEditorInspectorControls = ( props ) => {
 				} );
 				const newInnerParagraphWithQuote = [
 					createBlock( 'core/paragraph', {
-						content
+						content,
 					} ),
 				];
-				replaceInnerBlocks( clientId, newInnerParagraphWithQuote );
+				dispatch( blockEditorStore ).replaceInnerBlocks(
+					clientId,
+					newInnerParagraphWithQuote
+				);
 			} );
 	};
 

@@ -512,9 +512,6 @@ const QuoteAPIEditorInspectorControls = props => {
     setAttributes
   } = props;
   const [selectedAuthor, setSelectedAuthor] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)('');
-  const {
-    replaceInnerBlocks
-  } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_1__.useDispatch)('core/block-editor');
   const DEFAULT_OPTION = {
     value: '',
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Any Author', 'quote-api')
@@ -539,7 +536,7 @@ const QuoteAPIEditorInspectorControls = props => {
       const newInnerParagraphWithQuote = [(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('core/paragraph', {
         content
       })];
-      replaceInnerBlocks(clientId, newInnerParagraphWithQuote);
+      (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_1__.dispatch)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.store).replaceInnerBlocks(clientId, newInnerParagraphWithQuote);
     });
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, {
@@ -960,9 +957,8 @@ function addAttributes(settings) {
   return newSettings;
 }
 (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.addFilter)('blocks.registerBlockType', 'quote-api/add-attributes', addAttributes);
-
-// registerQuoteAPIEditorVariation();
-// registerQuoteAPIFrontendVariation();
+(0,_variations_quote_api_editor__WEBPACK_IMPORTED_MODULE_1__.registerQuoteAPIEditorVariation)();
+(0,_variations_quote_api_frontend__WEBPACK_IMPORTED_MODULE_2__.registerQuoteAPIFrontendVariation)();
 /******/ })()
 ;
 //# sourceMappingURL=index.js.map
