@@ -6,7 +6,7 @@
 		"blocks": {
 			"core/quote":{
 				"variations": {
-					"hand-drawn-purple":{
+					"__hand-drawn":{
                         "color": {
                             "text": "blue"
                         },

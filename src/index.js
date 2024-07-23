@@ -1,8 +1,7 @@
 import { addFilter } from '@wordpress/hooks';
 
-import { registerQuoteAPIEditorVariation } from './block-variations/quote-api-editor';
-import { registerQuoteAPIFrontendVariation } from './block-variations/quote-api-frontend';
-import { registerHandDrawnPurpleStyleVariation } from './block-styles/hand-drawn-purple';
+import { registerQuoteAPIEditorVariation } from './variations/quote-api-editor';
+import { registerQuoteAPIFrontendVariation } from './variations/quote-api-frontend';
 
 /**
  * Add the "namespace" attribute to "core/quote" block
@@ -22,18 +21,8 @@ function addAttributes( settings ) {
 		},
 	};
 
-	const __experimentalBorder = {
-		color: true,
-		radius: true,
-		style: true,
-		width: true,
-		__experimentalDefaultControls: {
-			color: true,
-			radius: true,
-			style: true,
-			width: true,
-		},
-	};
+
+
 	const newSettings = {
 		...settings,
 		attributes: {
@@ -42,7 +31,7 @@ function addAttributes( settings ) {
 		},
 		supports: {
 			...settings.supports,
-			//__experimentalBorder,
+			shadow: true
 		},
 	};
 
@@ -55,6 +44,5 @@ addFilter(
 	addAttributes
 );
 
-registerHandDrawnPurpleStyleVariation();
 registerQuoteAPIEditorVariation();
 registerQuoteAPIFrontendVariation();

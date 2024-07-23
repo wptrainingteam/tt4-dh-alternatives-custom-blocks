@@ -18,7 +18,6 @@ define('THEME_DIR', __DIR__);
 define('API_BASE_URL', 'https://api.quotable.io');
 
 require_once THEME_DIR . '/includes/register-block-style.php';
-require_once THEME_DIR . '/includes/filter-block-metadata.php';
 require_once THEME_DIR . '/includes/register-source-block-binding.php';
 require_once THEME_DIR . '/includes/enqueue-assets.php';
 
@@ -27,9 +26,6 @@ add_action('enqueue_block_editor_assets', 'dh__enqueue_block_variations_script')
 
 // hand-drawn-red - Register Block Style via PHP.
 add_action("init", 'dh__register_block_styles');
-
-// hand-drawn-purple - Filter core/quote block metadata to add a new style variation.
-add_filter('block_type_metadata', 'dh__filter_block_metadata');
 
 // Registers a custom block bindings source.
 add_action('init', 'dh__register_block_bindings_source');

@@ -5,24 +5,12 @@
 		"blocks": {
 			"core/quote":{
 				"variations": {
-					"hand-drawn-red":{
+					"__hand-drawn":{
                         "color": {
                             "text": "red"
                         },
 						"border": {
 							"color": "red",
-							"style": "solid",
-							"width": "2px",
-							"radius": "255px 15px 225px 15px/15px 225px 15px 255px"
-						},
-						"shadow": "var(--wp--preset--shadow--natural)"
-					},
-					"hand-drawn-purple":{
-                        "color": {
-                            "text": "purple"
-                        },
-						"border": {
-							"color": "purple",
 							"style": "solid",
 							"width": "2px",
 							"radius": "255px 15px 225px 15px/15px 225px 15px 255px"

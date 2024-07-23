@@ -18,8 +18,8 @@ function dh__register_block_styles()
 	register_block_style(
 		'core/quote',
 		array(
-			'name'         => 'hand-drawn-red',
-			'label'        => __('HD Red', 'tt4-block-styles')
+			'name'         => '__hand-drawn',
+			'label'        => __('Hand Drawn', 'tt4-dh-alternatives-custom-blocks')
 		)
 	);
 }
