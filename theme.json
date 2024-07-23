@@ -24,21 +24,8 @@
 					"style": "solid",
 					"width": "2px"
 				},
-				"shadow": "var(--wp--preset--shadow--natural)",
-				"variations": {
-					"__hand-drawn":{
-                        "color": {
-                            "text": "var(--wp--preset--color--accent-3)"
-                        },
-						"border": {
-							"color": "var(--wp--preset--color--accent-3)",
-							"style": "solid",
-							"width": "2px",
-							"radius": "255px 15px 225px 15px/15px 225px 15px 255px"
-						},
-						"shadow": "var(--wp--preset--shadow--natural)"
-					}
-				}
+				"shadow": "var(--wp--preset--shadow--natural)"
+				
 			}
 		}
 	}
