@@ -735,7 +735,6 @@ const QuoteAPIFrontendInspectorControls = props => {
                   }
                 }
               },
-              // tags: token.join( '|' ),
               content: 'This content will be replaced in the frontend with a random quote from either of the tags: ' + token.join(', ')
             })];
             replaceInnerBlocks(clientId, newInnerParagraphWithQuote);
