@@ -9,7 +9,7 @@ const quoteApiEditorVariationSettings = {
 	title: 'Quote API Editor',
 	scope: [ 'block', 'inserter', 'transform' ],
 	keywords: [ 'quote' ],
-	icon: 'rest-api',
+	icon: 'universal-access',
 	attributes: {
 		namespace: 'quote-api-editor',
 	},

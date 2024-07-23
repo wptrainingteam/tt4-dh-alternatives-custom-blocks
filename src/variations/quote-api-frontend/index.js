@@ -8,6 +8,7 @@ const quoteApiFrontendVariationSettings = {
 		'A "core/quote" block variation that displays a random quote from the Quotable API in the Frontend',
 	title: 'Quote API Frontend',
 	scope: [ 'block', 'inserter', 'transform' ],
+	icon: 'universal-access-alt',
 	keywords: [ 'quote' ],
 	innerBlocks: [
 		{

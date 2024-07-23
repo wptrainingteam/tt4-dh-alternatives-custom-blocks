@@ -21,6 +21,18 @@ function addAttributes( settings ) {
 		},
 	};
 
+	const __experimentalBorder = {
+		color: true,
+		radius: true,
+		style: true,
+		width: true,
+		__experimentalDefaultControls: {
+			color: true,
+			radius: true,
+			style: true,
+			width: true,
+		},
+	};
 
 
 	const newSettings = {
@@ -31,7 +43,8 @@ function addAttributes( settings ) {
 		},
 		supports: {
 			...settings.supports,
-			shadow: true
+			// __experimentalBorder,
+			// shadow: true
 		},
 	};
 
