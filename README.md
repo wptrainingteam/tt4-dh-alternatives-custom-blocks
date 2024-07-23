@@ -11,9 +11,10 @@ Resources mentioned on the Developer Hours session are available at this [Google
 ## Development
 
 1. Set up a local WordPress development environment.
-2. Clone / download this repository into the `wp-content/plugins` folder.
-3. Navigate to the `wp-content/plugins/tt4-dh-alternatives-custom-blocks` folder in the command line.
+2. Clone / download this repository into the `wp-content/themes` folder.
+3. Navigate to the `wp-content/themes/tt4-dh-alternatives-custom-blocks` folder in the command line.
 4. Run `npm install` to install the plugin's dependencies within a `/node_modules/` folder.
 5. Run `npm run start` to compile and watch source files for changes while developing.
-
+6. Login to your local WordPress development environment, navigate from Dashboard > Themes and activate "Developer Hours - Alternatives Custom Blocks"
+7. 
 Refer to `package.json` for additional commands.
