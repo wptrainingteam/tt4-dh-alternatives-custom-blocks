@@ -1,6 +1,6 @@
 # Developer Hours - Alternatives to Custom Blocks
 
-[![](https://img.shields.io/badge/playground-live%20preview-blue?logo=wordpress)](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/wordpress-juanmaguitar/tt4-dh-alternatives-custom-blocks/main/_playground/blueprint.json)  [![](https://img.shields.io/badge/excalidraw-project%20diagram-c2255c?logo=excalidraw)](https://excalidraw.com/#json=F4qpNq61_xeS0M0t_h1Cl,IyaG306nTuKGrsoTZANVpw) 
+[![](https://img.shields.io/badge/playground-live%20preview-blue?logo=wordpress)](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/wordpress-juanmaguitar/tt4-dh-alternatives-custom-blocks/main/_playground/blueprint.json)  [![](https://img.shields.io/badge/excalidraw-project%20diagram-c2255c?logo=excalidraw)](https://excalidraw.com/#json=oAB7DgFat_WZS3cWIikVF,OoKe7ywFlileRXaosh3KCg) 
 
 This project has been prepared for the event [Developer Hours: Do you really need a custom block? Let’s explore alternatives](https://www.meetup.com/es-ES/learn-wordpress-online-workshops/events/301860423/?notificationId=1397062753762701312) that was held on July 23rd 2024
 
