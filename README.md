@@ -23,6 +23,8 @@ Resources mentioned on the Developer Hours session are available at this [Google
 
 ## Development
 
+This child-theme requires that [`twenty-twenty-four`](https://github.com/WordPress/WordPress/tree/master/wp-content/themes/twentytwentyfour) theme also exists in the `themes` folder.
+
 1. Set up a local WordPress development environment.
 2. Clone / download this repository into the `wp-content/themes` folder.
 3. Navigate to the `wp-content/themes/tt4-dh-alternatives-custom-blocks` folder in the command line.
