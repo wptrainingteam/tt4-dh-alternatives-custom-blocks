@@ -2,7 +2,6 @@
 
 [![](https://img.shields.io/badge/playground-live%20preview-blue?logo=wordpress)](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/wordpress-juanmaguitar/tt4-dh-alternatives-custom-blocks/main/_playground/blueprint.json)  [![](https://img.shields.io/badge/excalidraw-project%20diagram-c2255c?logo=excalidraw)](https://excalidraw.com/#json=xE-cFmJvs7HvEt3_Yf5d0,lkXZcRhI0SjwdEzkQh1PwQ) 
 
-> ![!IMPORTANT]
 > This project is a child theme of Twenty Twenty Four that showcase different ways of extending a core block. 
 
 This child theme registers Block Styles and Variations of `core/quote` block and leverage Block Bindings to customize the dynamic render of the inner paragraph for one of its variations.
