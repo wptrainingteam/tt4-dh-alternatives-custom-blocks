@@ -18,9 +18,9 @@ The following two Block Variations are registered in this child theme:
 
 ---
 
-This project has been prepared for the event [Developer Hours: Do you really need a custom block? Let’s explore alternatives](https://www.meetup.com/es-ES/learn-wordpress-online-workshops/events/301860423/?notificationId=1397062753762701312) that was held on July 23rd 2024
+This project has been prepared for the event [Developer Hours: Do you really need a custom block? Let’s explore alternatives](https://www.meetup.com/es-ES/learn-wordpress-online-workshops/events/301860423/?notificationId=1397062753762701312) that was held on July 23rd 2024 (see [recording](https://www.youtube.com/watch?v=V6-yg-GKTZg))
 
-![Developer Hours cover](./assets/developer-hours-cover.png)
+[![Developer Hours cover](./assets/developer-hours-cover.png)](https://www.youtube.com/watch?v=V6-yg-GKTZg)
 
 Resources mentioned on the Developer Hours session are available at this [Google Doc](https://docs.google.com/document/d/1myYoEehSPS6rhFMzpEq4h_v3z5Z4TTA_C1rJDG0Mk0U/edit)
 
