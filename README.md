@@ -33,5 +33,6 @@ This child-theme requires that [`twenty-twenty-four`](https://github.com/WordPre
 3. Navigate to the `wp-content/themes/tt4-dh-alternatives-custom-blocks` folder in the command line.
 4. Run `npm install` to install the themes's dependencies within a `/node_modules/` folder.
 5. Run `npm run start` to compile and watch source files for changes while developing.
+6. Login to your local WordPress development environment, navigate from Dashboard > Themes and activate "Developer Hours - Alternatives Custom Blocks"
 
 Refer to `package.json` for additional commands.
